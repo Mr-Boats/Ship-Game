@@ -46,8 +46,9 @@ end
 
 function love.update(dt)
   
-  if love.keyboard.isDown('w') then
-    player.dy = 500
+  -- basic movement
+  if love.mouse.isDown(1) then
+    player.dy = -2
   else
     player.dy = 0
   end

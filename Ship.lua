@@ -1,7 +1,7 @@
 Ship = Class {}
 
-local GRAVITY = 15
-local FLIGHT = 10
+local GRAVITY = 200
+local FLIGHT = 50
 
 function Ship:init(x, y, width, height)
   self.x = x
@@ -19,11 +19,8 @@ end
 
 function Ship:update(dt)
   self.dy = self.dy + GRAVITY * dt
-  --[[
-  if love.mouse.wasPressed(1) then
-    self.dy = self.dy - FLIGHT * dt
-  end
-  ]]--
+
+  self.y = self.y + self.dy
 end
 
 function Ship:render()
